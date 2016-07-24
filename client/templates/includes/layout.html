@@ -1,0 +1,26 @@
+<template name="layoutNoWrapper">
+  {{> header}}
+      {{> Template.dynamic template=content}}
+  {{> footer}}
+</template>
+
+<template name="layout">
+  {{> header}}
+  <div class="content-wrapper">
+    {{> Template.dynamic template=content}}
+  </div>
+  {{> footer}}
+</template>
+
+<!--
+<template name="nav_item">
+  {{#if active}}
+    <li class="active">
+      <a href={{path}}>{{label}}</a>
+    </li>
+  {{else}}
+    <li>
+      <a href={{path}}>{{label}}</a>
+    </li>
+  {{/if}}
+</template> -->
