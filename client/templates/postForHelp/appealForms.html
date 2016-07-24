@@ -1,0 +1,58 @@
+<template name="appealNew">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+                <h4 class="text-center">这里免费发布有关留守儿童及其学校需要帮助的信息。</h4>
+                <br>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>创建您的求助信息</h4>
+                </div>
+                <div class="panel-body">
+                    {{#autoForm id="appealNew" collection="Appeals" type="insert" }}
+                        {{>appealFields}}
+                        <div>
+                            <button type="submit" class="btn btn-primary"><i class="fa fa-chevron-right"></i> 发布</button>
+                        </div>
+                    {{/autoForm}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="appealEdit">
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4>Edit appeal Post</h4>
+                </div>
+                <div class="panel-body">
+                    {{!-- {{#if $eq appeal.status 'pending'}} --}}
+                        {{#autoForm id="appealEdit" collection="Appeals" doc=appeal type="update" }}
+                            {{>appealFields}}
+                            <div>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Update</button>
+                                <button id="cancel" class="btn btn-default"> 取消</button>
+                            </div>
+                        {{/autoForm}}
+                    {{!-- {{else}}
+                        <div class="alert alert-info">
+                            <i class="fa fa-exclamation-triangle fa-2x pull-left"></i> Only pending Appeals can be edited.
+                            <br>
+                            <a href="{{pathFor 'appeal' _id=appeal._id}}"> 返回</a>
+                        </div>
+                    {{/if}} --}}
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+<template name="appealFields">
+    {{> afQuickField name='title' placeholder="展示的标题"}}
+    {{> afQuickField name="appealtype" firstOption="(选择一个求助类型)" options="allowed"}}
+    {{> afQuickField name='location' placeholder="需要帮助的地点"}}
+    {{> afQuickField name='description' rows=8 placeholder="告诉我们哪里的详细情况吧"}}
+    {{> afQuickField name='url' placeholder="您主页或微博"}}
+    {{> afQuickField name='contact' placeholder="电话或邮箱"}}
+</template>

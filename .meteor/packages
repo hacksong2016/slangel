@@ -33,6 +33,7 @@ utilities:avatar
 aldeed:autoform
 mpowaga:autoform-summernote
 aldeed:collection2
+aldeed:delete-button
 dburles:collection-helpers
 djedi:sanitize-html
 

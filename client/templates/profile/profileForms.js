@@ -25,6 +25,27 @@ AutoForm.addHooks(['profileNew', 'profileEdit'], {
   }
 });
 
+var profileData = new ReactiveVar({});
+
+Template.profileEdit.onCreated(function(){
+  var userId = FlowRouter.getParam("id");
+
+  Meteor.call('profile', {userId: userId}, (error, result)=>{
+    if(error) {
+      console.log(error);
+      return;
+    }
+    console.log(result);
+    profileData.set(result);
+  });
+});
+
+Template.profileEdit.helpers({
+  profile: function(){
+    return profileData.get();
+  }
+});
+
 Template.profileEdit.events({
   'click #cancel': function(event, template) {
     event.preventDefault();

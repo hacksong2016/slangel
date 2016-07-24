@@ -45,7 +45,10 @@ Template.profile.helpers({
     return profileData.get().title;
   },
   displayName: function() {
-    return profileData.get().displayName;
+    return profileData.get().name;
+  },
+  userId: function() {
+    return profileData.get().userId;
   },
   beforeRemove: function() {
     return function(collection, id) {

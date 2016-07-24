@@ -1,44 +1,34 @@
-Jobs = new Mongo.Collection("jobs");
+Appeals = new Mongo.Collection("appeals");
 
-Jobs.attachSchema(
+Appeals.attachSchema(
   new SimpleSchema({
     title: {
       type: String,
-      label: "Job Title",
+      label: "标题",
       max: 128
-    },
-    company: {
-      type: String,
-      label: "Company",
-      max: 128,
-      optional: true
     },
     location: {
       type: String,
-      label: "Location",
+      label: "地址",
       max: 128,
       optional: true
     },
     url: {
       type: String,
-      label: "URL",
+      label: "网站",
       max: 256,
       optional: true,
       regEx: SimpleSchema.RegEx.Url
     },
     contact: {
       type: String,
-      label: "Contact Info",
+      label: "联系方式",
       max: 128
     },
-    jobtype: {
+    appealtype: {
       type: String,
-      label: "Job Type",
+      label: "求助类型",
       allowedValues: HELP_TYPES
-    },
-    remote: {
-      type: Boolean,
-      label: "This is a remote position."
     },
     userId: {
       type: String,
@@ -73,7 +63,7 @@ Jobs.attachSchema(
     },
     description: {
       type: String,
-      label: "Job Description",
+      label: "详细描述",
       max: 20000,
       autoform: {
         afFieldInput: SUMMERNOTE_OPTIONS
@@ -144,9 +134,9 @@ Jobs.attachSchema(
   })
 );
 
-Jobs.helpers({
+Appeals.helpers({
   path: function() {
-    return 'jobs/' + this._id + '/' + this.slug();
+    return 'appeals/' + this._id + '/' + this.slug();
   },
   slug: function() {
     return getSlug(this.title);
@@ -159,7 +149,7 @@ Jobs.helpers({
   }
 });
 
-Jobs.allow({
+Appeals.allow({
   insert: function(userId, doc) {
     return userId && doc && userId === doc.userId;
   },

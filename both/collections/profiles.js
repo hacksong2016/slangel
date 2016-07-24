@@ -19,7 +19,7 @@ Profiles.attachSchema(
     },
     userName: {
       type: String,
-      label: "User Name",
+      label: "用户名",
       autoValue: function() {
         if (this.isInsert) {
           return getUserName(Meteor.user());
@@ -89,7 +89,7 @@ Profiles.attachSchema(
     },
     contact: {
       type: String,
-      label: "联系电话",
+      label: "联系方式",
       max: 1024,
       optional: true
     },

@@ -38,6 +38,13 @@ exposed.route('/helpMe', {
 	}
 });
 
+exposed.route('/myAppeals', {
+	name: 'myAppeals',
+	action: function () {
+		BlazeLayout.render('layout', {content: 'myAppeals'});
+	}
+});
+
 exposed.route('/helpMe/:id', {
 	name: 'helpmeSingle',
 	action: function () {
@@ -59,10 +66,10 @@ exposed.route('/postForHelp', {
 	}
 });
 
-exposed.route('/becomeHelper', {
-	name: 'becomeHelper',
+exposed.route('/profile', {
+	name: 'profileNew',
 	action: function () {
-		BlazeLayout.render('layout', {content: 'becomeHelper'});
+		BlazeLayout.render('layout', {content: 'profileNew'});
 	}
 });
 
@@ -70,6 +77,13 @@ exposed.route('/profile/:id', {
 	name: 'profile',
 	action: function () {
 		BlazeLayout.render('layout', {content: 'profile'});
+	}
+});
+
+exposed.route('/profile/:id/edit', {
+	name: 'profile',
+	action: function () {
+		BlazeLayout.render('layout', {content: 'profileEdit'});
 	}
 });
 
