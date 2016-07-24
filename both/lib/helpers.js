@@ -14,6 +14,13 @@ getUserName = function(user){
 	return '';
 };
 
+getUserId = function(user){
+	if (!user)
+		return '';
+
+	return user._id;
+};
+
 getUserEmail = function(user){
 	if (user && user.emails && user.emails[0] && user.emails[0].address)
 		return user.emails[0].address;

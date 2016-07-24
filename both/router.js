@@ -38,6 +38,13 @@ exposed.route('/helpMe', {
 	}
 });
 
+exposed.route('/helpMe/:id', {
+	name: 'helpmeSingle',
+	action: function () {
+		BlazeLayout.render('layout', {content: 'helpmeSingle'});
+	}
+});
+
 exposed.route('/helper', {
 	name: 'helper',
 	action: function () {

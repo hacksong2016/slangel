@@ -7,6 +7,9 @@ UI.registerHelper("currentUserDisplayName", function() {
 	return getUserName(Meteor.user());
 });
 
+UI.registerHelper("currentUserId", function() {
+	return getUserId(Meteor.user());
+});
 
 UI.registerHelper("currentUserEmail", function() {
 	return getUserEmail(Meteor.user());

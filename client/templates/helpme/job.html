@@ -1,0 +1,82 @@
+<template name="job">
+	<div id="job" class="row">
+		<div class="col-sm-12">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-12">
+							<h2>
+								{{title}}
+							</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-3">
+							{{#if company}}
+								<i class="fa fa-building fa-fw"></i> {{company}}
+							{{/if}}
+						</div>
+						<div class="col-sm-3">
+							{{#if location}}
+								<i class="fa fa-map-marker"></i> {{location}}
+							{{/if}}
+						</div>
+						<div class="col-sm-6 job-url">
+							{{#if url}}
+								<i class="fa fa-external-link fa-m"></i>&nbsp;&nbsp;<a href="{{url}}" target="_blank">{{cutString url 50}}</a>
+							{{/if}}
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-sm-3">
+							{{>jobLabels}}
+							{{#if hasLabel}}
+								<hr>
+							{{/if}}
+							{{#if contact}}
+								<i class="fa fa-envelope fa-fw"></i> {{contact}}
+								<hr>
+							{{/if}}
+							<i class="fa fa-calendar fa-fw"></i> Posted on {{formatDate createdAt}}
+							{{#if featured}}
+							<hr>
+							<i class="fa fa-trophy fa-fw"></i> Featured Until {{formatDate featuredThrough}}
+							{{/if}}
+						</div>
+						<div class="col-sm-9">
+							{{#if htmlDescription}}
+								{{{htmlDescription}}}
+							{{/if}}
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xs-12">
+							{{#if $eq userId $.Meteor.userId}}
+								{{!-- {{#if $eq status "pending"}} --}}
+									<div class="pull-right">
+										&nbsp;
+										<a href="/helpme/edit" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+									</div>
+								{{!-- {{/if}} --}}
+								{{#if $eq status "active"}}
+									<div class="pull-right">
+										<a id="job-deactivate" class="btn btn-danger">
+											<i class="fa fa-times"></i> Deactivate
+										</a>
+									</div>
+								{{/if}}
+							{{/if}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="jobLabels">
+    {{#if featured}}<span class="label label-primary"><i class="fa fa-trophy"></i> Featured</span>{{/if}}
+    {{#if remote}}<span class="label label-success"><i class="fa fa-globe"></i> Remote</span>{{/if}}
+    {{#if jobtype}}<span class="label label-default"><i class="fa fa-clock-o"></i> {{jobtype}}</span>{{/if}}
+</template>

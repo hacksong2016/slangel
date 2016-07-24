@@ -3,7 +3,7 @@ var profileData = new ReactiveVar({});
 Template.profile.onCreated(function(){
   var userId = FlowRouter.getParam("id");
 
-  Meteor.call('profile', {_id: userId}, (error, result)=>{
+  Meteor.call('profile', {userId: userId}, (error, result)=>{
     if(error) {
       console.log(error);
       return;
