@@ -38,27 +38,27 @@ Profiles.attachSchema(
     },
     name: {
       type: String,
-      label: "Name",
+      label: "姓名",
       max: 128
     },
     type: {
       type: String,
-      label: "Individual or Company",
-      allowedValues: ["Individual", "Company"]
+      label: "组织或个人",
+      allowedValues: ["组织", "个人"]
     },
     title: {
       type: String,
-      label: "Title",
+      label: "您所擅长提供的帮助",
       max: 128
     },
     location: {
       type: String,
-      label: "Location",
+      label: "所在城市",
       max: 256
     },
     description: {
       type: String,
-      label: "Description",
+      label: "介绍一下自己吧",
       max: 10000,
       autoform: {
         afFieldInput: SUMMERNOTE_OPTIONS
@@ -78,52 +78,24 @@ Profiles.attachSchema(
     },
     availableForHire: {
       type: Boolean,
-      label: "Currently Available For Hire",
+      label: "现在可以提供帮助吗",
       defaultValue: false
     },
     interestedIn: {
       type: [String],
-      label: "Interested In",
-      allowedValues: JOB_TYPES,
+      label: "可提供哪些方面帮助",
+      allowedValues: HELP_TYPES,
       optional: true
     },
     contact: {
       type: String,
-      label: "Contact Info",
+      label: "联系电话",
       max: 1024,
       optional: true
     },
     url: {
       type: String,
-      label: "Personal URL",
-      max: 1024,
-      optional: true,
-      regEx: SimpleSchema.RegEx.Url
-    },
-    resumeUrl: {
-      type: String,
-      label: "Resume URL",
-      max: 1024,
-      optional: true,
-      regEx: SimpleSchema.RegEx.Url
-    },
-    githubUrl: {
-      type: String,
-      label: "GitHub URL",
-      max: 1024,
-      optional: true,
-      regEx: SimpleSchema.RegEx.Url
-    },
-    linkedinUrl: {
-      type: String,
-      label: "LinkedIn URL",
-      max: 1024,
-      optional: true,
-      regEx: SimpleSchema.RegEx.Url
-    },
-    stackoverflowUrl: {
-      type: String,
-      label: "Stackoverflow URL",
+      label: "网站",
       max: 1024,
       optional: true,
       regEx: SimpleSchema.RegEx.Url

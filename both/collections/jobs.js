@@ -34,7 +34,7 @@ Jobs.attachSchema(
     jobtype: {
       type: String,
       label: "Job Type",
-      allowedValues: JOB_TYPES
+      allowedValues: HELP_TYPES
     },
     remote: {
       type: Boolean,

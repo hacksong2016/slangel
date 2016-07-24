@@ -1,4 +1,4 @@
-JOB_TYPES = ["Full Time", "Part Time",  "Hourly Contract", "Term Contract", "Mentoring", "Internship", "Bounty", "Open Source", "Volunteer", "Other"];
+HELP_TYPES = ["金钱", "图书",  "讲课", "生日礼物", "校服", "玩具", "心愿认领", "一对一帮扶", "拍照", "农产品销路"];
 
 SUMMERNOTE_OPTIONS = {
   type: 'summernote',
