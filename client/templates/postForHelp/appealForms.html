@@ -25,14 +25,14 @@
         <div class="col-sm-10 col-sm-offset-1">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h4>Edit appeal Post</h4>
+                    <h4>更新您的求助信息</h4>
                 </div>
                 <div class="panel-body">
                     {{!-- {{#if $eq appeal.status 'pending'}} --}}
                         {{#autoForm id="appealEdit" collection="Appeals" doc=appeal type="update" }}
                             {{>appealFields}}
                             <div>
-                                <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> Update</button>
+                                <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> 更新</button>
                                 <button id="cancel" class="btn btn-default"> 取消</button>
                             </div>
                         {{/autoForm}}

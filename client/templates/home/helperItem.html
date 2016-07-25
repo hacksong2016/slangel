@@ -1,8 +1,10 @@
 <template name="helperItem">
   <div class="col-sm-4">
       <div class="team-member">
-          <img src="img/team/1.jpg" class="img-responsive img-circle" alt="">
-          <h4>李小小1（北京）</h4>
+        <a href="/profile/{{userId}}">
+          <img src="images/avatar.png" class="img-responsive img-circle" alt="">
+        </a>
+          <h4>{{userName}} ({{location}})</h4>
       </div>
   </div>
   <!-- <div class="col-sm-4">

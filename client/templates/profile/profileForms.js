@@ -4,10 +4,7 @@ AutoForm.addHooks(['profileNew', 'profileEdit'], {
       if (error) {
         console.log("Insert Error:", error);
       } else {
-        // analytics.track("Profile Created");
-        // Router.go('profile', {
-        //   _id: result
-        // });
+        FlowRouter.go('/profile/'+ Meteor.userId());
         console.log("Profile Created");
       }
     },
@@ -15,34 +12,23 @@ AutoForm.addHooks(['profileNew', 'profileEdit'], {
       if (error) {
         console.log("Update Error:", error);
       } else {
-        // analytics.track("Profile Edited");
-        // Router.go('profile', {
-        //   _id: Router.current().params._id
-        // });
+        FlowRouter.go('/profile/'+ Meteor.userId());
         console.log("Profile Edited");
       }
     }
   }
 });
 
-var profileData = new ReactiveVar({});
-
 Template.profileEdit.onCreated(function(){
-  var userId = FlowRouter.getParam("id");
+	var userId = FlowRouter.getParam("id");
 
-  Meteor.call('profile', {userId: userId}, (error, result)=>{
-    if(error) {
-      console.log(error);
-      return;
-    }
-    console.log(result);
-    profileData.set(result);
-  });
+	Meteor.subscribe('profiles', {userId: userId}, {});
 });
 
 Template.profileEdit.helpers({
   profile: function(){
-    return profileData.get();
+		var userId = FlowRouter.getParam("id");
+    return Profiles.findOne({userId: userId});
   }
 });
 

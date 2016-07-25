@@ -1,62 +1,21 @@
-var profileData = new ReactiveVar({});
-
 Template.profile.onCreated(function(){
-  var userId = FlowRouter.getParam("id");
+	var userId = FlowRouter.getParam("id");
 
-  Meteor.call('profile', {userId: userId}, (error, result)=>{
-    if(error) {
-      console.log(error);
-      return;
-    }
-    console.log(result);
-    profileData.set(result);
-  });
+	Meteor.subscribe('profiles', {userId: userId}, {});
 });
 
 Template.profile.helpers({
-  availableForHire: function() {
-    return profileData.get().availableForHire;
-  },
-  type: function() {
-    return profileData.get().type;
-  },
-  location: function() {
-    return profileData.get().location;
-  },
-  interestedIn: function() {
-    return profileData.get().interestedIn;
-  },
-  url: function() {
-    return profileData.get().url;
-  },
-  contact: function() {
-    return profileData.get().contact;
-  },
-  resumeUrl: function() {
-    return profileData.get().resumeUrl;
-  },
-  createdAt: function() {
-    return profileData.get().createdAt;
-  },
-  htmlDescription: function() {
-    return profileData.get().htmlDescription;
-  },
-  title: function() {
-    return profileData.get().title;
-  },
-  displayName: function() {
-    return profileData.get().name;
-  },
-  userId: function() {
-    return profileData.get().userId;
+  profile: function(){
+		var userId = FlowRouter.getParam("id");
+    return Profiles.findOne({userId: userId});
   },
   beforeRemove: function() {
     return function(collection, id) {
+      console.log(id);
       var doc = collection.findOne(id);
       if (confirm('Really delete "' + doc.title + '"?')) {
         this.remove();
-        // analytics.track("Profile Removed");
-        // Router.go('profiles');
+        FlowRouter.go('/profile');
       }
     };
   },

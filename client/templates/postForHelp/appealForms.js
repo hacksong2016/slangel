@@ -19,6 +19,19 @@ AutoForm.addHooks(['appealNew', 'appealEdit'], {
 	}
 });
 
+Template.appealEdit.onCreated(function(){
+	var appealId = FlowRouter.getParam("id");
+
+	Meteor.subscribe('appeals', {_id: appealId}, {});
+});
+
+Template.appealEdit.helpers({
+  appeal: function(){
+		var appealId = FlowRouter.getParam("id");
+    return Appeals.findOne({_id: appealId});
+  }
+});
+
 Template.appealEdit.events({
 	'click #cancel':function(event, template){
 		event.preventDefault();
