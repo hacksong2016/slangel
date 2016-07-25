@@ -1,5 +1,5 @@
-<template name="job">
-	<div id="job" class="row">
+<template name="appeal">
+	<div id="appeal" class="row">
 		<div class="col-sm-12">
 			<div class="panel panel-default">
 				<div class="panel-body">
@@ -21,7 +21,7 @@
 								<i class="fa fa-map-marker"></i> {{location}}
 							{{/if}}
 						</div>
-						<div class="col-sm-6 job-url">
+						<div class="col-sm-6 appeal-url">
 							{{#if url}}
 								<i class="fa fa-external-link fa-m"></i>&nbsp;&nbsp;<a href="{{url}}" target="_blank">{{cutString url 50}}</a>
 							{{/if}}
@@ -56,12 +56,12 @@
 								{{!-- {{#if $eq status "pending"}} --}}
 									<div class="pull-right">
 										&nbsp;
-										<a href="/helpme/edit" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+										<a href="/helpme/{{_id}}/edit" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
 									</div>
 								{{!-- {{/if}} --}}
 								{{#if $eq status "active"}}
 									<div class="pull-right">
-										<a id="job-deactivate" class="btn btn-danger">
+										<a id="appeal-deactivate" class="btn btn-danger">
 											<i class="fa fa-times"></i> Deactivate
 										</a>
 									</div>

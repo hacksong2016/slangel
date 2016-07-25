@@ -46,9 +46,16 @@ exposed.route('/myAppeals', {
 });
 
 exposed.route('/helpMe/:id', {
-	name: 'helpmeSingle',
+	name: 'appeal',
 	action: function () {
-		BlazeLayout.render('layout', {content: 'helpmeSingle'});
+		BlazeLayout.render('layout', {content: 'appeal'});
+	}
+});
+
+exposed.route('/helpMe/:id/edit', {
+	name: 'appealEdit',
+	action: function () {
+		BlazeLayout.render('layout', {content: 'appealEdit'});
 	}
 });
 
@@ -81,7 +88,7 @@ exposed.route('/profile/:id', {
 });
 
 exposed.route('/profile/:id/edit', {
-	name: 'profile',
+	name: 'profileEdit',
 	action: function () {
 		BlazeLayout.render('layout', {content: 'profileEdit'});
 	}

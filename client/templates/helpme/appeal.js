@@ -1,6 +1,6 @@
 var helpmeData = new ReactiveVar({});
 
-Template.job.onCreated(function(){
+Template.appeal.onCreated(function(){
   var helpmeId = FlowRouter.getParam("id");
 
   Meteor.call('helpme', {_id: helpmeId}, (error, result)=>{
@@ -13,14 +13,17 @@ Template.job.onCreated(function(){
   });
 });
 
-Template.job.events({
-  'click #job-deactivate': function(event, template) {
+Template.appeal.events({
+  'click #appeal-deactivate': function(event, template) {
     event.preventDefault();
     Modal.show('jobDeactivate',template.data);
   }
 });
 
-Template.job.helpers({
+Template.appeal.helpers({
+  '_id': function() {
+    return helpmeData.get()._id;
+  },
   'title': function() {
     return helpmeData.get().title;
   },

@@ -4,7 +4,7 @@ Meteor.methods({
     return profile;
   },
   "helpme": function (selector) {
-    var helpme = Jobs.findOne(selector);
+    var helpme = Appeals.findOne(selector);
     return helpme;
   }
 });

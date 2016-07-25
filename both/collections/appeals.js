@@ -82,14 +82,6 @@ Appeals.attachSchema(
         }
       },
     },
-    featuredThrough: {
-      type: Date,
-      optional: true
-    },
-    featuredChargeHistory: {
-      type: [String],
-      optional: true
-    },
     // Automatically set HTML content based on markdown content
     // whenever the markdown content is set.
     htmlDescription: {

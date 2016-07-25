@@ -100,10 +100,6 @@ Profiles.attachSchema(
       optional: true,
       regEx: SimpleSchema.RegEx.Url
     },
-    randomSorter: {
-      type: Number,
-      defaultValue: Math.floor(Math.random() * 10000)
-    },
     status: {
       type: String,
       allowedValues: PROFILE_STATUSES,
