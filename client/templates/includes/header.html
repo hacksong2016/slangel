@@ -67,9 +67,16 @@
                 <li class="divider"></li>
             {{/if}}
 
-            <li>
-                <a href="/profile/{{currentUserId}}"><i class="fa fa-rocket fa-fw"></i> 帮助者信息</a>
-            </li>
+            {{#if currentUser.isDeveloper}}
+                <li>
+                  <a href="/profile/{{currentUserId}}"><i class="fa fa-rocket fa-fw"></i> 帮助者信息</a>
+                </li>
+            {{else}}
+                <li>
+                    <a href="/profile"><i class="fa fa-rocket fa-fw"></i> 成为帮助者</a>
+                </li>
+            {{/if}}
+
             <!-- <li>
                 <a href="#" id="userProfile"><i class="fa fa-user fa-fw"></i> 个人信息</a>
             </li> -->
