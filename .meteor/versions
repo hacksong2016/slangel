@@ -58,10 +58,7 @@ less@2.6.5
 livedata@1.0.18
 localstorage@1.0.11
 logging@1.0.14
-manuel:isdev@1.0.0
-manuel:reactivearray@1.0.5
-manuel:viewmodel@4.1.9
-manuel:viewmodel-debug@2.7.0
+matb33:collection-hooks@0.8.3
 mdg:validation-error@0.2.0
 meteor@1.1.16
 meteor-base@1.0.4
@@ -77,6 +74,7 @@ momentjs:moment@2.14.4
 mongo@1.1.9_1
 mongo-id@1.0.5
 mpowaga:autoform-summernote@0.4.3
+natestrauser:connection-banner@0.4.3
 natestrauser:font-awesome@4.6.3
 npm-bcrypt@0.8.6_3
 npm-mongo@1.4.45

@@ -29,6 +29,7 @@ useraccounts:bootstrap
 useraccounts:flow-routing
 raix:handlebar-helpers
 utilities:avatar
+natestrauser:connection-banner
 
 aldeed:autoform
 mpowaga:autoform-summernote
@@ -36,12 +37,10 @@ aldeed:collection2
 aldeed:delete-button
 dburles:collection-helpers
 djedi:sanitize-html
+matb33:collection-hooks
 
 alanning:roles
-
 momentjs:moment
 lbee:moment-helpers
 practicalmeteor:faker
-
-manuel:viewmodel
 less

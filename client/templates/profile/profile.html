@@ -77,11 +77,11 @@
 							{{#if $eq userId $.Meteor.userId}}
 								<div class="pull-right">
 									&nbsp;
-									<a href="/profile/{{userId}}/edit" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+									<a href="/profile/{{userId}}/edit" class="btn btn-primary"><i class="fa fa-pencil"></i> 编辑</a>
 								</div>
 								<div class="pull-right">
 									{{#quickRemoveButton collection="Profiles" _id=_id class="btn btn-danger" beforeRemove=beforeRemove}}
-										<i class="fa fa-trash-o"></i> Delete
+										<i class="fa fa-trash-o"></i> 删除
 									{{/quickRemoveButton}}
 								</div>
 							{{/if}}

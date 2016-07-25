@@ -1,5 +1,6 @@
 <template name="header">
   <!-- Navigation -->
+    {{>connectionBanner}}
     <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top affix">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -22,12 +23,16 @@
                     <li>
                         <a class="page-scroll" href="/helper">帮助者</a>
                     </li>
+                    {{#if currentUser}}
                     <li>
                         <a class="page-scroll" href="/postForHelp">发布求助</a>
                     </li>
-                    <li>
+                      {{#unless currentUser.isDeveloper}}
+                      <li>
                         <a class="page-scroll" href="/profile">成为帮助者</a>
-                    </li>
+                      </li>
+                      {{/unless}}
+                    {{/if}}
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
