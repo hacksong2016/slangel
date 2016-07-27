@@ -85,7 +85,7 @@ Helps.allow({
     return userId && doc && userId === doc.helperId;
   },
   update: function(userId, doc, fieldNames, modifier) {
-    return Roles.userIsInRole(userId, ['admin']) || (!_.contains(fieldNames, 'status') && userId && doc && userId === doc.userId);
+    return Roles.userIsInRole(userId, ['admin']) || (!_.contains(fieldNames, 'status') && userId && doc && userId === doc.appealsId);
   },
   remove: function(userId, doc) {
     return Roles.userIsInRole(userId, ['admin']) || (userId && doc && userId === doc.userId);

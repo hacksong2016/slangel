@@ -7,11 +7,28 @@
           <h4>{{helperName}}（{{helperLocation}}）</h4>
         </a>
       </div>
-      <div class="col-md-7">{{description}}</div>
+      <div class="col-md-5">{{description}}</div>
       <div class="col-md-2 help-btn">
-        <button class="btn btn-info">接受</button>
-        <button class="btn btn-danger">拒绝</button>
+        <b class="{{status.style}}">{{status.text}}</b>
+        <!-- <b class="text-danger">已拒绝</b>
+        <b class="text-info">已接受</b>
+        <b class="text-success">成功帮助</b> -->
       </div>
+      {{#if canOperation}}
+        <!-- {{#if $eq status 'pending'}} -->
+        <div class="col-md-2 help-btn">
+          <button name="accept" class="btn btn-info">接受</button>
+          <button name="refuse" class="btn btn-danger">拒绝</button>
+        </div>
+        <!-- {{/if}} -->
+        <!-- {{#if $eq status 'accepted'}}
+        <div class="col-md-2 help-btn">
+          <button name="accept" class="btn btn-info">成功</button>
+          <button name="refuse" class="btn btn-danger">失败</button>
+        </div>
+        {{/if}} -->
+
+      {{/if}}
     </div>
   </div>
 </template>
