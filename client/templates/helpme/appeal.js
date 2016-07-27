@@ -8,7 +8,13 @@ AutoForm.addHooks(['helps'], {
 			doc.appealsId = thisAppeal.get()._id;
 			doc.appealsUserId = thisAppeal.get().userId;
 
-			// console.log(thisAppeal.get());
+			var helper = Profiles.findOne({userId: Meteor.userId()});
+			if(helper) {
+				doc.helperName = helper.name;
+				doc.helperLocation = helper.location;
+			}
+
+			console.log(helper);
 
 			return doc;
       // Then return it or pass it to this.result()
@@ -42,6 +48,7 @@ AutoForm.addHooks(['helps'], {
 Template.appeal.onCreated(function(){
 	var appealId = FlowRouter.getParam("id");
 	Meteor.subscribe('appeals', {_id: appealId}, {});
+	Meteor.subscribe('helps', appealId);
 });
 
 Template.appeal.events({
@@ -58,7 +65,10 @@ Template.appeal.helpers({
 		thisAppeal.set(appeal);
 		return appeal;
   },
-  'hasLabel': function() {
+	helps: function() {
+		return Helps.find({}, {sort: {createdAt: -1}});
+	},
+  hasLabel: function() {
     return this.jobType || this.remote || this.featured;
   }
 });

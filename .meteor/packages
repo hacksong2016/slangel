@@ -38,6 +38,7 @@ aldeed:delete-button
 dburles:collection-helpers
 djedi:sanitize-html
 matb33:collection-hooks
+reywood:publish-composite
 
 alanning:roles
 momentjs:moment

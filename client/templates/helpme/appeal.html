@@ -72,31 +72,13 @@
 					{{> help}}
 				</div>
 			</div>
-			<hr>
 			<div class="row">
-				<div class="container">
-	          <div class="row">
-	              <div class="col-lg-12 text-center">
-	                  <h2 class="section-heading">帮助他的人</h2>
-	              </div>
-	          </div>
-	          <div class="row">
-	            <!-- {{#each helpers}}
-	              {{> helperItem}}
-	            {{/each}} -->
-							<div class="col-sm-4">
-						      <div class="team-member">
-						          <img src="/images/avatar.png" class="img-responsive img-circle" alt="">
-						          <h4>李小小2（北京）</h4>
-						      </div>
-						  </div>
-							<div class="col-sm-4">
-						      <div class="team-member">
-						          <img src="/images/avatar.png" class="img-responsive img-circle" alt="">
-						          <h4>李小小2（北京）</h4>
-						      </div>
-						  </div>
-	          </div>
+				<div class="col-md-10 col-md-offset-1 container">
+	          <h4 class="section-heading">帮助他的人</h4>
+						<hr>
+						{{#each helps}}
+							{{> helpItem}}
+						{{/each}}
 	      </div>
 			</div>
 			<hr>

@@ -1,9 +1,9 @@
 Meteor.methods({
-  "profile": function (selector) {
+  profile: function (selector) {
     var profile = Profiles.findOne(selector);
     return profile;
   },
-  "helpme": function (selector) {
+  helpme: function (selector) {
     var helpme = Appeals.findOne(selector);
     return helpme;
   }
