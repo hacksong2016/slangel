@@ -19,4 +19,4 @@ meteor
 
 ## 演示地址
 
-稍后部署后附上
+http://slangel2.fami2x.com/
