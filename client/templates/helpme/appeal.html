@@ -54,19 +54,12 @@
 					<div class="row">
 						<div class="col-xs-12">
 							{{#if $eq userId $.Meteor.userId}}
-								{{!-- {{#if $eq status "pending"}} --}}
+
 									<div class="pull-right">
 										&nbsp;
-										<a href="/helpme/{{_id}}/edit" class="btn btn-primary"><i class="fa fa-pencil"></i> Edit</a>
+										<a href="/helpme/{{_id}}/edit" class="btn btn-primary"><i class="fa fa-pencil"></i> 编辑</a>
 									</div>
-								{{!-- {{/if}} --}}
-								{{#if $eq status "active"}}
-									<div class="pull-right">
-										<a id="appeal-deactivate" class="btn btn-danger">
-											<i class="fa fa-times"></i> Deactivate
-										</a>
-									</div>
-								{{/if}}
+
 							{{/if}}
 						</div>
 					</div>
@@ -75,8 +68,8 @@
 
 			</div>
 			<div class="row">
-				<div class="col-md-12 text-right">
-					<button class="btn btn-success">帮助他</button>
+				<div id="help" class="col-md-10 col-md-offset-1">
+					{{> help}}
 				</div>
 			</div>
 			<hr>
@@ -116,4 +109,13 @@
     {{#if featured}}<span class="label label-primary"><i class="fa fa-trophy"></i> Featured</span>{{/if}}
     {{#if remote}}<span class="label label-success"><i class="fa fa-globe"></i> Remote</span>{{/if}}
     {{#if jobtype}}<span class="label label-default"><i class="fa fa-clock-o"></i> {{jobtype}}</span>{{/if}}
+</template>
+
+<template name="help">
+	{{#autoForm id="helps" collection="Helps"  type="insert"}}
+		{{> afQuickField name="description" placeholder="填写您可以帮助信息"}}
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary">提交</button>
+		</div>
+	{{/autoForm}}
 </template>

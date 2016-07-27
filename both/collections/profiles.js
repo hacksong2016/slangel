@@ -59,7 +59,7 @@ Profiles.attachSchema(
     description: {
       type: String,
       label: "介绍一下自己吧",
-      max: 10000,
+      max: 2000000,
       autoform: {
         afFieldInput: SUMMERNOTE_OPTIONS
       }

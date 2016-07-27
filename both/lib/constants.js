@@ -16,3 +16,5 @@ SUMMERNOTE_OPTIONS = {
 
 STATUSES = ["pending","active","flagged","inactive","filled"];
 PROFILE_STATUSES = ["active","flagged"];
+
+HELP_STATUSES = ["pending", "accepted", "refused", "successed", "failed"];

@@ -64,7 +64,7 @@ Appeals.attachSchema(
     description: {
       type: String,
       label: "详细描述",
-      max: 20000,
+      max: 2000000,
       autoform: {
         afFieldInput: SUMMERNOTE_OPTIONS
       }
